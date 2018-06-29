@@ -1,0 +1,61 @@
+1.数据库：存储数据的仓库
+2.数据库系统：由数据库，数据库管理系统和应用开发工具构成
+3.数据库管理系统：用来定义数据、管理和维护数据的软件。（mysql,sql等）
+
+MYSQL:
+1.开放源代码的数据库
+2.跨平台
+3.开源免费
+4.功能强大方便
+
+.msi
+
+SQL:
+1.结构化查询语句
+2.DDL数据定义语言，用于定义数据库，表，视图，
+索引和触发器等，DROP,CREATE,ALTER等
+3.DML:增删改数据库，INSERT插入数据、update更改数据，
+DELETE删除数据
+4.	DQL:数据检索语句，从表中获得数据，确定数据怎样在应用程序中给出，
+像SELETE查询数据
+5.DCL: 数据控制语言，控制用户访问权限，GRANT,REVOKE,COMMIT,ROLLBACK
+
+MYSQL文件夹:
+1.bin目录，存储可执行文件
+2.data:存储数据文件
+3.include:存储包含的头文件
+4.lib目录，存储库文件
+5.docs目录，文件
+share目录，错误消息和字符集文件
+my.ini文件，MYSQL的配置文件，设置字符集
+客户端字符集[mysql]:default-character-set=utf8
+服务器端字符集[mysql]:character-set-server=utf8
+
+
+不需要以管理员身份运行---------
+但是要添加环境变量
+
+
+
+开启mysql -uroot -p或net start mysql56
+关闭net stop mysql57 ,   退出exit或quit或\q
+设置命令提示符
+Ctrl-C强制退出
+设置字符集：
+\s 
+查看：status
+-u用户名
+-p密码
+-h服务器名称
+-p端口号
+-D打开指定数据库
+--prompt=name,设置命令提示符（只对当前连接符）
+--delimiter=name,指定分隔符
+-V,--version,输出版本信息并退出
+
+
+退出：1.exit
+      2.quit
+      3.\q
+      4.Ctrl+c(5.6不可用)
+
