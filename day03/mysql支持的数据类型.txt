@@ -1,0 +1,37 @@
+1.整数类 
+	help tinyint查看详细信息
+	\h INT
+2.浮点类型
+	FLOAT 
+	DOUBLE
+	DECIMAL和double一样，内部以字符串形式存储
+3.字符串类型
+	CHAR 定长字符串
+	VARCHAR 变长字符串
+	TEXT 文本字符串 
+	ENUM:枚举(可用于性别)
+	SET
+	。。。
+4.日期时间类
+	TIME
+	DATE
+	DATETIME
+	TIMESTAMP
+	YEAR
+	整型保存时间戳
+5.二进制类(用的少)
+
+1.数据表
+	创建数据表：
+	CREATE TABLE [IF NOT EXISTS] tbl_name(
+		字段名称 字段类型 [完整性约束条件]
+	)ENGINE=引擎名称CHARSET='编码方式';
+	
+	完整性约束条件：
+		1.PRIMARY KEY主键
+		2.AUTO_INCREMENT自增长
+		3.FOREIGN KEY外键
+		4.NOT NULL非空
+		5.UNIQUE KEY唯一
+		6.DEFAULT 默认值
+	

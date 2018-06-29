@@ -1,0 +1,8 @@
+定义：
+就是指表的类型，数据库的存储类型决定了表在计算机中的存储方式
+。用户可以根据不同的存储方式，是否进行事务处理等来选择合适的存储引擎。
+
+查看mysql的存储引擎:SHOW ENGINES
+查看显示支持的存储引擎信息:SHOW VARIABLES LIKE 'have%'
+查看默认的存储引擎：SHOW VARIABLES LIKE 'storage_engine'
+	
