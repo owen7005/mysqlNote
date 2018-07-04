@@ -1,0 +1,38 @@
+char ---占用空间大，速度快
+varchar ---占用空间小，速度快
+TEXT类型只能保存字符数据,且不能有默认值,速度最慢
+
+
+----测试char和varchar
+
+CREATE TABLE IF NOT EXISTS test5(
+	str1 CHAR(5),
+	str2 VARCHAR(5)
+);
+
+INSERT test5 VALUES('a ', 'a  ');
+//查看插入的空格
+SELECT CONCAT(str1,'-'),CONCAT(str2,'-') FROM test5;
+
+//测试放在字符串首部的空格是否被忽略---不被忽略
+
+//中文在utf8下长度是3个
+
+INSERT test5 VALUES('和','呵');
+
+//5.7好像插入不了中文??
+
+SELECT LENGTH('啊');
+SELECT CHAR_LENGTH('啊');
+
+INSERT test5 VALUES('啊啊啊啊啊','大约在冬季');
+SELECT * FROM test5;
+
+
+//TEXT不能有默认值 
+
+CREATE TABLE test6(
+	str1 TEXT
+);
+
+INSERT test6 VALUES('的傻乎乎的山峰的叔叔的那份你');

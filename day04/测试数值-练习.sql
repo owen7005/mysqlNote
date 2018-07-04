@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS cms_cate(
 	id TINYINT,
-	cateName VARCHAR(50),
+	cateName VARC时HAR(50),
 	cateDesc VARCHAR(50)
 )ENGINE=MyISAM CHARSET=UTF8;
 
@@ -57,8 +57,12 @@ CREATE TABLE test3(
 CREATE TABLE test4(
 	num1 FLOAT(6,2), //2表示保留两位--四舍五入
 	num2 DOUBLE(6,2),
-	num3 DECIMAL(6,2) //以字符串的形式保存的，查询时，以字符串形式查询时，转为数值时可能是一堆小数点，
-	如果以数值的形式查询，则不存在这种情况。其它两种情况只能以数值形式查询。DECIMAL对精度要求高的地方使用，
+	num3 DECIMAL(6,2) //和double一样以字符串的形式保存的，查询时，以字符串形式查询时，转为数值时可能是一堆小数点，
+	如果以数值的形式查询，则不存在这种情况。DECIMAL对精度要求高的地方使用，
 );
+
+对于精度要求高的时候，使用定点数存，因为定点数内部是以字符串形式存储的
+
+
 
 
