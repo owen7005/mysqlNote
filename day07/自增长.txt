@@ -1,0 +1,45 @@
+默认从1自增长
+
+自增长的一定是主键，主键不一定自增长。
+
+---AUTO INCREMENT
+
+CREATE TABLE IF NOT EXISTS user5(
+	id SMALLINT KEY AUTO_INCREMENT,
+	user VARCHAR(10)
+);
+
+INSERT user5 VALUES(1,'rq');
+
+INSERT user5(user) VALUES('rq2');
+
+INSERT user5(user) VALUES('rq3');
+
+INSERT user5 VALUES(100,'rq3');
+
+INSERT user5(user) VALUES('rq4'); ---101 'rq4'
+
+INSERT user5 VALUES(DEFAULT,'rq5');
+
+INSERT user5 VALUES(NULL,'rq6');
+
+//自增长从指定值开始
+
+CREATE TABLE IF NOT EXISTS user6(
+	id SMALLINT KEY AUTO_INCREMENT,
+	username VARCHAR(10)
+) AUTO_INCREMENT=100;
+
+SHOW CREATE TABLE user6;
+
+INSERT user6(username) VALUES('rq');
+
+//修改表修改自增长的值
+
+ALTER TABLE user6 AUTO_INCREMENT=200;
+
+CREATE TABLE IF NOT EXISTS user7(
+	id INT KEY AUTO_INCREMENT,
+	age INT
+)AUTO_INCREMENT=60 DEFAULT CHARACTER SET=utf8;
+

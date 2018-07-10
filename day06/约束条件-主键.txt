@@ -1,0 +1,42 @@
+1.PRIMARY KEY:主键
+	加到唯一的标示性字段上.
+	单子段主键和多字段主键
+	CREATE TABLE IF NOT EXISTS user1(
+		id INT PRIMARY KEY,
+		username VARCHAR(20)
+	);
+	
+	//查看创建表的定义
+	SHOW CREATE TABLE 表名
+	
+	INSERT user1 VALUES(1,'king');
+	INSERT user1 VALUES(2,'rq');
+	
+	//查询
+	SELECT * FROM user1 WHERE id=1;
+	
+	//两个PRI代表复合主键，只能表示一个主键，一个表中只能有一个主键。
+	CREATE TABLE IF NOT EXISTS user2(
+		id INT,
+		username VARCHAR(20),
+		card CHAR(18),
+		PRIMARY KEY(id,card)
+	);
+	INSERT user2 VALUES(1,'rq','111');
+	INSERT user2 VALUES(1,'rq','222');
+	
+	//省略掉PRI
+	CREATE TABLE IF NOT EXISTS user3(
+		id INT KEY,
+		username VARCHAR(20)
+	);
+	//更换主键
+	CREATE TABLE IF NOT EXISTS user4(
+		id INT ,
+		username VARCHAR(20) KEY
+	);
+2.AUTO_INCREMENT:自增长
+3.FOREIGN KEY:外键
+4.NOT NULL:非空
+5.UNIQUE KEY:唯一
+6.DEFAULT:默认值

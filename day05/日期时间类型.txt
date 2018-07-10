@@ -1,0 +1,67 @@
+重点是year : 1901-2155
+
+--测试YEAR类型
+
+CREATE TABLE IF NOT EXISTS test11(
+	birth YEAR
+);
+
+INSERT test11 VALUES(1901);
+INSERT test11 VALUES(2155);
+
+//也可用字符串
+INSERT test11 VALUES('1988');
+
+//0-69之间的数字会转换为2000-2069年之间
+//INSERT test11 VALUES(12); --2012
+
+//70-99会转为1970-1999之间
+INSERT test11 VALUES(70);
+
+//数字0转为0000
+//字符串0转为2000
+
+
+
+---测试TIME ---三个字节
+
+CREATE TABLE IF NOT EXISTS test12(
+	birth TIME
+);
+
+//1天12小时12分12秒
+INSERT test12 VALUES('1 12:12:12');
+
+//可省略秒数  11:11:00
+INSERT test12 VALUES('11:11');
+
+//省略小时   00:12:34
+INSERT test12 VALUES('1234');
+
+//只有秒 00:00:12
+INSERT test12 VALUES('12');
+
+//只有0
+INSERT test12 VALUES(0);或'0'
+
+
+---测试DATE ,三个字节
+
+CREATE TABLE IF NOT EXISTS test13(
+		test DATE
+);
+
+//2012-06-07
+INSERT test13 VALUES('12-6-7');
+
+INSERT test13 VALUES('12/6/7');
+ 
+INSERT test13 VALUES('120607');
+
+
+
+
+
+
+
+

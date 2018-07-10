@@ -1,0 +1,17 @@
+
+SET['value1','value2'] :最多保存64个成员,可以选择多个值
+
+CREATE TABLE IF NOT EXISTS test10(
+	fav SET('a','b','c','d')
+)
+
+INSERT test10 VALUES('a,b,c');
+
+INSERT test10 VALUES('b,c');
+
+INSERT test10 VALUE(3); //前两个爱好
+
+每个值以二进制保存
+1,2,4,8..以此类推
+1+2=3，用十进制数3表示：所以插入前两个数值INSERT test10 VALUES(3)
+1+2+4=7，所以插入前三个数: INSERT test10 VALUES(7)

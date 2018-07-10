@@ -1,0 +1,16 @@
+NOT NULL
+
+比如用户名和密码
+非空和默认值使用
+CREATE TABLE IF NOT EXISTS user8 (
+	id INT UNSIGNED KEY AUTO_INCREMENT,
+	username VARCHAR(20) NOT NULL,
+	password CHAR(32) NOT NULL,
+	age TINYINT UNSIGNED
+);
+
+INSERT user8(username,password) VALUES('rq','rq');
+
+INSERT user8(username,password,age) VALUES('rq','rq',11);
+
+INSERT user8(username,password) VALUES(NULL,NULL);

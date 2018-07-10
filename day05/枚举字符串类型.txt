@@ -1,0 +1,21 @@
+
+ENUMB['value1','value2',...]:最大枚举65535个,只能插入枚举中的一个值
+MYSQL保存的是每个值得序号
+
+CREATE TABLE IF NOT EXISTS test10(
+ sex ENUM("男","女",'保密')
+)
+INSERT test9 VALUES('男 ');
+INSERT test9 VALUES('女');
+INSERT test9 VALUES('保密');
+
+也可以插入每个值对应的序号，从1开始
+
+INSERT test9 VALUES(2);
+
+//插入空可以，因为默认值为空
+INSERT test9 VALUES();
+
+//插入空字符串不行
+INSERT test9 VALUES('');
+
