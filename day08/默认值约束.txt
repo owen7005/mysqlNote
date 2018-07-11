@@ -1,0 +1,17 @@
+
+--测试默认值
+
+CREATE TABLE IF NOT EXISTS user12(
+	id INT UNSIGNED KEY AUTO_INCREMENT,
+	user VARCHAR(20) NOT NULL,
+	password CHAR(32) NOT NULL,
+	age TINYINT UNSIGNED DEFAULT 18,
+	addr VARCHAR(40) NOT NULL DEFAULT '上海',
+	sex ENUM('男','女','保密') NOT NULL DEFAULT '女'
+)
+
+INSERT user12(user,password) VALUES('rq',123456);
+
+INSERT user12 VALUES(2,'rq',123,'12','背景','女');
+
+INSERT user12 VALUES(3,'RQ',111,DEFAULT,DEFAULT,'男');

@@ -1,0 +1,17 @@
+UNIQUE KEY(key可以省略)
+
+---测试UNIQUE KEY 
+
+CREATE TABLE IF NOT EXISTS user13(
+	id TINYINT UNSIGNED KEY AUTO_INCREMENT,
+	username VARCHAR(20) NOT NULL UNIQUE,
+	card CHAR(16) UNIQUE
+);	
+
+INSERT user13(username) VALUES('rq');
+INSERT user13(username) VALUES('RQ2');
+
+
+//但是NULL是特殊值的，可以插入
+INSERT user13(username,card) VALUES('B1',NULL);
+INSERT user13(username,card) VALUES('B2',NULL);
