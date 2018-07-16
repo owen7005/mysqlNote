@@ -1,0 +1,51 @@
+
+----添加字段
+ALTER TABLE 表名 ADD 字段名称 字段类型 [完整性约束条件] [FIRST|AFTER 字段名称]
+
+添加card字段 CHAR(18);
+
+ALTER TABLE user17 ADD card CHAR(18);
+
+ALTER TABLE user17 ADD card1 VARCHAR(100) NOT NULL UNIQUE;
+
+ALTER TABLE user17 ADD card2 VARCHAR(20) NOT NULL UNIQUE FIRST;
+
+ALTER TABLE user17 ADD card3 INT NOT NULL UNIQUE DEFAULT 10 AFTER AFE;
+
+---添加多个字段
+
+---选中一次表，完成多个操作
+ALTER TABLE 表名
+
+ADD card5 INT NOT NULL DEFAULT 17 AFTER age,
+
+ADD card6 FLOAT(6,2) FIRST,
+
+ADD card7 SET('A','B','C');
+
+ALTER 使性质改变
+
+(之间是连续的)
+ALTER TABLE user17
+
+ADD card5 INT NOT NULL DEFAULT 17 AFTER age,
+
+ADD card6 FLOAT(6,2) FIRST,
+
+ADD card7 SET('A','B','C');
+
+-----删除字段
+ALTER TABLE 表名 DROP age
+
+---删除多个
+ALTER TABLE user17
+
+DROP regTime,
+DROP sex
+
+---添加字段删除字段
+
+ALTER TABLE user17
+
+ADD card7 INT UNSIGNED NOT NULL DEFAULT 10 AFTER sex,
+DROP password;
